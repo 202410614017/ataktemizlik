@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+:root {
+  --brand-green: #1e5631;
+  --primary: #1e4a9a;
+  --primary-dark: #153670;
+  --primary-light: #2b57c4;
+  --accent: #22c55e;
+  --accent-dark: #16a34a;
+  --navy: #0f1f3d;
+  --footer-bg: #1a2b48;
+  --section-bg: #f4f7fb;
+  --text-muted: #64748b;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-navy: var(--navy);
+  --color-footer-bg: var(--footer-bg);
+  --color-section-bg: var(--section-bg);
+  --color-text-muted: var(--text-muted);
+  --font-sans: var(--font-poppins);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  color: #1e293b;
+  background: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.section-padding {
+  @apply py-10 sm:py-14 md:py-16 lg:py-20;
+}
+
+.container-custom {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply inline-flex min-h-11 items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-md transition-all hover:bg-primary-dark hover:shadow-lg sm:px-6;
+}
+
+.btn-accent {
+  @apply inline-flex min-h-11 items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-md transition-all hover:bg-accent-dark hover:shadow-lg sm:px-6;
+}
+
+.heading-underline {
+  background: linear-gradient(transparent 68%, #22c55e 68%);
+  display: inline;
+}
+
+/* iOS zoom önleme — form alanları min 16px */
+.input-field {
+  @apply w-full min-h-11 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-base outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 sm:text-sm;
+}
+
+/* Sabit butonlar için alt boşluk */
+.main-content {
+  padding-bottom: calc(5.5rem + var(--safe-bottom));
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    padding-bottom: 0;
+  }
+}
+
+@keyframes splash-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes splash-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05) translateY(-10px);
+  }
+}
+
+@keyframes splash-bar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.splash-in {
+  animation: splash-in 0.8s ease-out forwards;
+}
+
+.splash-out {
+  animation: splash-out 0.5s ease-in forwards;
+}
+
+.splash-bar {
+  animation: splash-bar 1.6s ease-out forwards;
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: hero-fade-up 0.9s ease-out 0.3s both;
+}
+
+.hero-form {
+  animation: hero-fade-up 0.9s ease-out 0.55s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-in,
+  .splash-out,
+  .splash-bar,
+  .hero-content,
+  .hero-form {
+    animation: none;
+  }
+}
