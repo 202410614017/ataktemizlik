@@ -1,21 +1,12 @@
-"use client";
-
-import Image from "next/image";
 import Link from "next/link";
-import { IMAGES, SITE } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
+import HeroBackground from "./HeroBackground";
 import QuoteForm from "./QuoteForm";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-slate-900">
-      <Image
-        src={IMAGES.hero}
-        alt="Profesyonel temizlik hizmeti"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center opacity-60"
-      />
+      <HeroBackground />
       <div className="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy/80 to-navy/70 lg:bg-gradient-to-r lg:from-navy/95 lg:via-navy/75 lg:to-navy/30" />
 
       <div className="container-custom relative grid items-center gap-8 py-10 sm:gap-10 sm:py-14 lg:min-h-[580px] lg:grid-cols-12 lg:gap-10 lg:py-16">

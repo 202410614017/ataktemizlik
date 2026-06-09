@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { IMG } from "@/lib/images";
 
@@ -38,13 +37,13 @@ export default function SplashScreen() {
       }`}
     >
       <div className={`splash-logo flex flex-col items-center ${hide ? "splash-out" : "splash-in"}`}>
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={IMG.logo}
           alt="Atak Temizlik"
           width={280}
           height={72}
           className="h-12 w-auto max-w-[80vw] sm:h-16 md:h-20"
-          priority
         />
         <p className="mt-4 text-center text-xs font-medium tracking-[0.25em] text-white/80 uppercase sm:mt-6 sm:text-sm sm:tracking-[0.35em]">
           Profesyonel Temizlik
