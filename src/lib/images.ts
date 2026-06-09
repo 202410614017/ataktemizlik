@@ -1,6 +1,5 @@
-/** GitHub Pages alt yolu — build sırasında GITHUB_PAGES=true ile set edilir */
-const BASE_PATH =
-  process.env.GITHUB_PAGES === "true" ? "/ataktemizlik" : "";
+/** GitHub Pages alt yolu — client bundle'da da çalışması için NEXT_PUBLIC_ kullanılır */
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 function asset(path: string): string {
   return `${BASE_PATH}${path}`;
