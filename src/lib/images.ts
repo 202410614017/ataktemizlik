@@ -1,31 +1,39 @@
+/** GitHub Pages alt yolu — build sırasında GITHUB_PAGES=true ile set edilir */
+const BASE_PATH =
+  process.env.GITHUB_PAGES === "true" ? "/ataktemizlik" : "";
+
+function asset(path: string): string {
+  return `${BASE_PATH}${path}`;
+}
+
 /** Yerel görseller — her hizmet için alakalı görsel */
 export const IMG = {
-  logo: "/images/atak-ilaclama-logo.png",
+  logo: asset("/images/atak-ilaclama-logo.png"),
 
   // Hero & genel
-  hero: "/images/hero-family.jpg",
-  pageHero: "/images/hero-family.jpg",
+  hero: asset("/images/hero-family.jpg"),
+  pageHero: asset("/images/hero-family.jpg"),
 
   // Hizmet görselleri
-  homeCleaning: "/images/ev-temizligi.jpg",
-  officeCleaning: "/images/ofis-temizligi.jpg",
-  postConstruction: "/images/insaat-sonrasi.jpg",
-  sofaCleaning: "/images/koltuk-yatak-gen.jpg",
-  windowCleaning: "/images/cam-temizligi.jpg",
-  apartmentCleaning: "/images/apartman-merdiven.jpg",
+  homeCleaning: asset("/images/ev-temizligi.jpg"),
+  officeCleaning: asset("/images/ofis-temizligi.jpg"),
+  postConstruction: asset("/images/insaat-sonrasi.jpg"),
+  sofaCleaning: asset("/images/koltuk-yatak-gen.jpg"),
+  windowCleaning: asset("/images/cam-temizligi.jpg"),
+  apartmentCleaning: asset("/images/apartman-merdiven.jpg"),
 
   // Bölüm görselleri
-  team: "/images/ekip.jpg",
-  ctaTeam: "/images/ekip.jpg",
-  testimonial: "/images/hero-family.jpg",
-  satisfaction: "/images/ev-temizligi.jpg",
-  processBg: "/images/hero-family.jpg",
-  handsCleaning: "/images/temizlik-detay.jpg",
+  team: asset("/images/ekip.jpg"),
+  ctaTeam: asset("/images/ekip.jpg"),
+  testimonial: asset("/images/hero-family.jpg"),
+  satisfaction: asset("/images/ev-temizligi.jpg"),
+  processBg: asset("/images/hero-family.jpg"),
+  handsCleaning: asset("/images/temizlik-detay.jpg"),
 
   // Yedek (WordPress)
-  cleaningGeneral: "/images/temizlik-genel.webp",
-  heroBanner: "/images/hero-banner.webp",
-  koltukWebp: "/images/koltuk-yatak.webp",
+  cleaningGeneral: asset("/images/temizlik-genel.webp"),
+  heroBanner: asset("/images/hero-banner.webp"),
+  koltukWebp: asset("/images/koltuk-yatak.webp"),
 } as const;
 
 export const IMAGE_BASE =
